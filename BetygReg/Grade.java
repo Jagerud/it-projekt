@@ -8,7 +8,11 @@ import java.util.ArrayList;
 
 public class Grade {
 
-	public static void saveGrade(ArrayList<String> list){
+	public Grade(){
+
+	}
+
+	public void saveGrade(ArrayList<String> list){
 		try {
 			File file = new File("studentList.txt");
 			// if file doesnt exists, then create it
