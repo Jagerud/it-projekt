@@ -13,6 +13,7 @@ public class Start {
 		Scanner sc = new Scanner(System.in);
 		//Hämtar lista över kurser
 		while(true){
+			System.out.println("penis");
 			System.out.println("username:(1)");
 			String user = sc.nextLine();
 			System.out.println("password:(1)");
