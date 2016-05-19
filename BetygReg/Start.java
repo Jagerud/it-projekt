@@ -11,6 +11,8 @@ public class Start {
 	 */
 	public static void main(String[] args) throws FileNotFoundException {
 		Scanner sc = new Scanner(System.in);
+		TestingGit test = new TestingGit();
+		test.testSomething();
 		//Hämtar lista över kurser
 		while(true){
 			System.out.println("penis");
