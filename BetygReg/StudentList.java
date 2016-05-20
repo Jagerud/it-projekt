@@ -10,10 +10,15 @@ public class StudentList {
 	private static ArrayList<String> list2 = new ArrayList<String>();
 	private static boolean loop;
 
-	public static void getRelevant(String cID) throws FileNotFoundException{
+	public StudentList(){
+
+	}
+
+
+	public void getRelevant(String cID) throws FileNotFoundException{
 		Scanner sc = new Scanner(System.in);
 		loop = true;
-
+		Grade grade = new Grade();		//kolla upp när de ska initieras
 		findFile = "studentList.txt";
 		//Hämta lista med studenter+betyg
 		String content = new Scanner(new File(findFile)).useDelimiter("\\Z").next();
@@ -66,11 +71,11 @@ public class StudentList {
 				list2.clear();
 			}
 			else if(findFile.toUpperCase().equals("END")){
-				Grade.saveGrade(list);
+				grade.saveGrade(list);
 			}
 		}
 	}
-	public static ArrayList<String> getList(){
+	public ArrayList<String> getList(){
 		return list;
 	}
 }

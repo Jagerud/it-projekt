@@ -9,9 +9,13 @@ import java.util.Scanner;
 public class Course {
 
 	private static String findFile;
-	private static ArrayList<String> list; 
+	private static ArrayList<String> list;
 
-	public static void getCourseList() throws FileNotFoundException{
+	public Course(){
+
+	}
+
+	public void getCourseList() throws FileNotFoundException{
 		Scanner sc = new Scanner(System.in);
 		//Hämtar listan över kurser
 		findFile = "courseID.txt";
@@ -24,15 +28,17 @@ public class Course {
 			//Välj relevant kurs
 			String cID = sc.nextLine();
 			cID = cID.toUpperCase();
+			StudentList sList = new StudentList();
+			Grade grade = new Grade();
 			if(cID.toUpperCase().equals("END")){
-				if(StudentList.getList()==null){
+				if(sList.getList()==null){
 					System.exit(1);
 				}
-				Grade.saveGrade(StudentList.getList());
+				grade.saveGrade(sList.getList());
 			}
 			//Hämta studenter
 			if(list.contains(cID)){
-				StudentList.getRelevant(cID);
+				sList.getRelevant(cID);
 			}
 			else{
 				System.out.println("ERROR 404! Course not found.");
