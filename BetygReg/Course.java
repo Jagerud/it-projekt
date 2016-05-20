@@ -11,11 +11,8 @@ public class Course {
 	private static String findFile;
 	private static ArrayList<String> list;
 
-	public Course(){
 
-	}
-
-	public void getCourseList() throws FileNotFoundException{
+	public static void main(String[] args) throws FileNotFoundException{
 		Scanner sc = new Scanner(System.in);
 		//Hämtar listan över kurser
 		findFile = "courseID.txt";
