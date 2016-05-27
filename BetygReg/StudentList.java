@@ -51,16 +51,16 @@ public class StudentList {
 			//Studentens betyg
 			String relGrade = list2.get(0).substring(9, 10);
 			//String relGrade2 = list2.get(0).subtring(11);
-			Student current = new Student(rel, relGrade);
-			current.setGrade();
+			Student current = new Student(rel, relGrade, grade);
+			current.alterGrade();
 			for(int i = 0; i<list.size(); i++){
 				if(list.get(i).contains(cID+" "+rel)){
-					list.set(i, cID+" "+rel+" "+current.getGrade());
+					list.set(i, cID+" "+rel+" "+current.getGrade().getGrade());
 				}
 			}
 			for(int i = 0; i<list2.size(); i++){
 				if(list2.get(i).contains(rel)){
-					list2.set(i, rel+" "+current.getGrade());
+					list2.set(i, rel+" "+current.getGrade().getGrade());
 				}
 			}
 			//Allt utom "y" och "end" tolkas som nej.
@@ -71,7 +71,7 @@ public class StudentList {
 				list2.clear();
 			}
 			else if(findFile.toUpperCase().equals("END")){
-				grade.saveGrade(list);
+				current.getGrade().saveGrade(list);
 			}
 		}
 	}

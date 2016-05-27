@@ -35,6 +35,7 @@ public class Grade {
 		}
 		System.exit(1);
 	}
+
 	public String getGrade(){
 		return grade;
 	}

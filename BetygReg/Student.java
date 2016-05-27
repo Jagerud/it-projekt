@@ -4,23 +4,29 @@ import java.util.*;
 public class Student {
 
 	private String ID;
-	private String grade;
+	//private String grade;
+	private Grade gradeObject;
 
-	public Student(String id, String grades){
+	public Student(String id, String grades, Grade gradeObject){
 		ID = id;
-		grade = grades;
+		//grade = grades;
+		this.gradeObject = gradeObject;
 		//grade2 = grades2;
 	}
-	public String getGrade(){
+	/*public String getGrade(){
 		return grade;
-	}
-	public void setGrade(){
+	} */
+	public void alterGrade(){
 		System.out.println("Set grade. (u, g, vg)");
 		Scanner sc = new Scanner(System.in);
-		grade = sc.nextLine().toLowerCase();
-		while(!grade.equals("g") && !grade.equals("vg") && !grade.equals("u")){
+		gradeObject.setGrade(sc.nextLine().toLowerCase());
+		while(!gradeObject.getGrade().equals("g") && !gradeObject.getGrade().equals("vg") && !gradeObject.getGrade().equals("u")){
 			System.out.println("Invalid grade.");
-			grade = sc.nextLine();
+			gradeObject.setGrade(sc.nextLine());
 		}
+
+	}
+	public Grade getGrade(){
+		return gradeObject;
 	}
 }
