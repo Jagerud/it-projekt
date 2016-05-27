@@ -7,8 +7,9 @@ public class StudentList {
 
 	private String findFile;
 	private ArrayList<String> list;
-	private ArrayList<String> list2 = new ArrayList<String>();
+	private ArrayList<String> list2 = new ArrayList<>();
 	private boolean loop;
+	private Student current;
 
 	public StudentList(){
 
@@ -17,7 +18,7 @@ public class StudentList {
 	public void getRelevant(String cID) throws FileNotFoundException{
 		Scanner sc = new Scanner(System.in);
 		loop = true;
-		Grade grade = new Grade();		//kolla upp när de ska initieras
+		//Grade grade = new Grade();		//kolla upp när de ska initieras
 		findFile = "studentList.txt";
 		//Hämta lista med studenter+betyg
 		String content = new Scanner(new File(findFile)).useDelimiter("\\Z").next();
@@ -51,7 +52,7 @@ public class StudentList {
 			//Studentens betyg
 			String relGrade = list2.get(0).substring(9, 10);
 			//String relGrade2 = list2.get(0).subtring(11);
-			Student current = new Student(rel, relGrade, grade);
+			current = new Student(rel, relGrade);
 			current.alterGrade();
 			for(int i = 0; i<list.size(); i++){
 				if(list.get(i).contains(cID+" "+rel)){
@@ -77,5 +78,8 @@ public class StudentList {
 	}
 	public ArrayList<String> getList(){
 		return list;
+	}
+	public Student getStudent(){
+		return current;
 	}
 }

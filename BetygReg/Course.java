@@ -14,6 +14,7 @@ public class Course {
 
 	public void getCourse() throws FileNotFoundException{
 		Scanner sc = new Scanner(System.in);
+
 		//Hämtar listan över kurser
 		findFile = "courseID.txt";
 		String content = new Scanner(new File(findFile)).useDelimiter("\\Z").next();
@@ -26,12 +27,13 @@ public class Course {
 			String cID = sc.nextLine();
 			cID = cID.toUpperCase();
 			StudentList sList = new StudentList();
-			Grade grade = new Grade();
+			//Grade grade = new Grade();
 			if(cID.toUpperCase().equals("END")){
 				if(sList.getList()==null){
 					System.exit(1);
 				}
-				grade.saveGrade(sList.getList());
+				sList.getStudent().getGrade().saveGrade(sList.getList());
+
 			}
 			//Hämta studenter
 			if(list.contains(cID)){

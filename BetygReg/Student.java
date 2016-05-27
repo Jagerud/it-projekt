@@ -7,10 +7,10 @@ public class Student {
 	//private String grade;
 	private Grade gradeObject;
 
-	public Student(String id, String grades, Grade gradeObject){
+	public Student(String id, String grades){
 		ID = id;
 		//grade = grades;
-		this.gradeObject = gradeObject;
+		gradeObject =  new Grade();
 		//grade2 = grades2;
 	}
 	/*public String getGrade(){
