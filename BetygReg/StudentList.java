@@ -14,7 +14,6 @@ public class StudentList {
 
 	}
 
-
 	public void getRelevant(String cID) throws FileNotFoundException{
 		Scanner sc = new Scanner(System.in);
 		loop = true;
@@ -51,8 +50,8 @@ public class StudentList {
 			rel = rel.toLowerCase();
 			//Studentens betyg
 			String relGrade = list2.get(0).substring(9, 10);
-			String relGrade2 = list2.get(0).subtring(11);
-			Student current = new Student(rel, relGrade, relGrade2);
+			//String relGrade2 = list2.get(0).subtring(11);
+			Student current = new Student(rel, relGrade);
 			current.setGrade();
 			for(int i = 0; i<list.size(); i++){
 				if(list.get(i).contains(cID+" "+rel)){
