@@ -50,8 +50,9 @@ public class StudentList {
 			}
 			rel = rel.toLowerCase();
 			//Studentens betyg
-			String relGrade = list2.get(0).substring(9);
-			Student current = new Student(rel, relGrade);
+			String relGrade = list2.get(0).substring(9, 10);
+			String relGrade2 = list2.get(0).subtring(11);
+			Student current = new Student(rel, relGrade, relGrade2);
 			current.setGrade();
 			for(int i = 0; i<list.size(); i++){
 				if(list.get(i).contains(cID+" "+rel)){
