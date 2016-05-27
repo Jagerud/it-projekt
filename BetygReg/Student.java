@@ -6,9 +6,10 @@ public class Student {
 	private String ID;
 	private String grade;
 
-	public Student(String id, String grades){
+	public Student(String id, String grades, String grades2){
 		ID = id;
 		grade = grades;
+		grade2 = grades2;
 	}
 	public String getGrade(){
 		return grade;
