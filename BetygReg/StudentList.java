@@ -5,10 +5,10 @@ import java.util.*;
 
 public class StudentList {
 
-	private static String findFile;
-	private static ArrayList<String> list;
-	private static ArrayList<String> list2 = new ArrayList<String>();
-	private static boolean loop;
+	private String findFile;
+	private ArrayList<String> list;
+	private ArrayList<String> list2 = new ArrayList<String>();
+	private boolean loop;
 
 	public StudentList(){
 

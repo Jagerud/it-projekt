@@ -8,11 +8,11 @@ import java.util.Scanner;
 
 public class Course {
 
-	private static String findFile = null;
-	private static ArrayList<String> list;
+	private  String findFile = null;
+	private  ArrayList<String> list;
 
 
-	public static void main(String[] args) throws FileNotFoundException{
+	public void getCourse() throws FileNotFoundException{
 		Scanner sc = new Scanner(System.in);
 		//Hämtar listan över kurser
 		findFile = "courseID.txt";
