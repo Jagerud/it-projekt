@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Course {
 
-	private static String findFile;
+	private static String findFile = null;
 	private static ArrayList<String> list;
 
 
@@ -18,11 +18,11 @@ public class Course {
 		findFile = "courseID.txt";
 		String content = new Scanner(new File(findFile)).useDelimiter("\\Z").next();
 		//Filens innehåll --> array
-		list = new ArrayList<String>(Arrays.asList(content.split("\n")));
+		list = new ArrayList<>(Arrays.asList(content.split("\n")));
 		while(true){
 			System.out.println(list);
 			System.out.println("Which course would ou like to view?\nIf you would like to end the session write \"end\".");
-			//Välj relevant kurs
+			//Välj relevant
 			String cID = sc.nextLine();
 			cID = cID.toUpperCase();
 			StudentList sList = new StudentList();
