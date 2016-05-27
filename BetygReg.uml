@@ -3,11 +3,11 @@
   <ID>JAVA</ID>
   <OriginalElement>BetygReg</OriginalElement>
   <nodes>
-    <node x="291.0" y="0.0">BetygReg.Student</node>
-    <node x="0.0" y="231.0">BetygReg.Course</node>
-    <node x="0.0" y="395.0">BetygReg.Start</node>
-    <node x="278.33634311512424" y="228.8961625282167">BetygReg.Grade</node>
-    <node x="0.0" y="0.0">BetygReg.StudentList</node>
+    <node x="44.0" y="147.0">BetygReg.Student</node>
+    <node x="40.0" y="553.0">BetygReg.Course</node>
+    <node x="46.5" y="699.0">BetygReg.Start</node>
+    <node x="65.5" y="11.5">BetygReg.Grade</node>
+    <node x="10.0" y="328.0">BetygReg.StudentList</node>
   </nodes>
   <notes />
   <edges>
@@ -23,17 +23,19 @@
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="BetygReg.Course" target="BetygReg.Grade">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
     <edge source="BetygReg.StudentList" target="BetygReg.Student">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
+    <edge source="BetygReg.Course" target="BetygReg.Grade">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.9506437768240343" x="224.5" y="223.0" />
-  <SelectedNodes />
+  <settings layout="Hierarchic Group" zoom="0.5662337662337663" x="123.0" y="381.1811926605504" />
+  <SelectedNodes>
+    <node>BetygReg.StudentList</node>
+  </SelectedNodes>
   <Categories>
     <Category>Fields</Category>
     <Category>Constructors</Category>
