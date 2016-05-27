@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Grade {
+	private String grade;
 
 	public Grade(){
 
@@ -24,6 +25,7 @@ public class Grade {
 			BufferedWriter bw = new BufferedWriter(fw);
 
 			bw.write(list.toString());
+			bw.write(grade);		//Skriver till string grade som sparas i grade
 			bw.close();
 
 			System.out.println("Grades registered.");
@@ -32,5 +34,11 @@ public class Grade {
 			e.printStackTrace();
 		}
 		System.exit(1);
+	}
+	public String getGrade(){
+		return grade;
+	}
+	public void setGrade(String grade){
+		this.grade = grade;
 	}
 }
