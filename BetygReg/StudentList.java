@@ -25,7 +25,7 @@ public class StudentList {
 		//Ta bort hakarna
 		content = content.substring(1);
 		content = content.substring(0, content.length()-1);
-		list = new ArrayList<String>(Arrays.asList(content.split(", ")));
+		list = new ArrayList<>(Arrays.asList(content.split(", ")));
 
 		//Hämta ut relevanta studenter som läser den valda kursen
 		for(int i = 0; i<list.size(); i++){
@@ -35,7 +35,7 @@ public class StudentList {
 				list2.add(b);
 			}
 		}
-		while(loop){	
+		while(loop){
 			if(list2.isEmpty()){
 				System.out.println("There are no students in this course.");
 				break;
@@ -43,25 +43,25 @@ public class StudentList {
 			System.out.println(list2);
 			System.out.println("Which student would you like to view?");
 			//Student ID
-			String rel = sc.nextLine();
-			while(!list2.contains(rel+" u") && !list2.contains(rel+" g") && !list2.contains(rel+" vg")){
+			String inputedStudent = sc.nextLine();
+			while(!list2.contains(inputedStudent+" u") && !list2.contains(inputedStudent+" g") && !list2.contains(inputedStudent+" vg")){
 				System.out.println("That student is not in this course.");
-				rel = sc.nextLine();
+				inputedStudent = sc.nextLine();
 			}
-			rel = rel.toLowerCase();
+			inputedStudent = inputedStudent.toLowerCase();
 			//Studentens betyg
 			String relGrade = list2.get(0).substring(9, 10);
 			//String relGrade2 = list2.get(0).subtring(11);
-			current = new Student(rel, relGrade);
+			current = new Student(inputedStudent);
 			current.alterGrade();
 			for(int i = 0; i<list.size(); i++){
-				if(list.get(i).contains(cID+" "+rel)){
-					list.set(i, cID+" "+rel+" "+current.getGrade().getGrade());
+				if(list.get(i).contains(cID+" "+inputedStudent)){
+					list.set(i, cID+" "+inputedStudent+" "+current.getGrade().getGrade());
 				}
 			}
 			for(int i = 0; i<list2.size(); i++){
-				if(list2.get(i).contains(rel)){
-					list2.set(i, rel+" "+current.getGrade().getGrade());
+				if(list2.get(i).contains(inputedStudent)){
+					list2.set(i, inputedStudent+" "+current.getGrade().getGrade());
 				}
 			}
 			//Allt utom "y" och "end" tolkas som nej.

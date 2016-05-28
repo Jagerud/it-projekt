@@ -7,7 +7,7 @@ public class Student {
 	//private String grade;
 	private Grade gradeObject;
 
-	public Student(String id, String grades){
+	public Student(String id){
 		ID = id;
 		//grade = grades;
 		gradeObject =  new Grade();
