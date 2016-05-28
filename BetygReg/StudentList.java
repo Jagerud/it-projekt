@@ -50,7 +50,7 @@ public class StudentList {
 			}
 			inputedStudent = inputedStudent.toLowerCase();
 			//Studentens betyg
-			String relGrade = list2.get(0).substring(9, 10);
+			//String relGrade = list2.get(0).substring(9, 10);
 			//String relGrade2 = list2.get(0).subtring(11);
 			current = new Student(inputedStudent);
 			current.alterGrade();

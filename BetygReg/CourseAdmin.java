@@ -11,10 +11,8 @@ public class CourseAdmin {
     private  String findFile = null;
     private  ArrayList<String> list;
 
-
     public void getCourse() throws FileNotFoundException{
         Scanner sc = new Scanner(System.in);
-
         //Hämtar listan över kurser
         findFile = "courseID.txt";
         String content = new Scanner(new File(findFile)).useDelimiter("\\Z").next();
@@ -34,9 +32,7 @@ public class CourseAdmin {
                 }
                 sList.getStudent().getGrade().saveGrade(sList.getList());
                 System.out.println(sList.getStudent().getGrade());
-
             }
-
             //Hämta studenter
             if (list.contains(cID)) {
                 sList.getRelevant(cID);
@@ -44,6 +40,5 @@ public class CourseAdmin {
                 System.out.println("ERROR 404! Course not found.");
             }
         }
-
     }
 }
