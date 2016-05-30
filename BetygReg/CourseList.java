@@ -13,4 +13,7 @@ public class CourseList {
     public ArrayList<Course> getCourseList(){
         return courseList;
     }
+    public void bullShitCourses(){
+        courseList.add("725G01");
+    }
 }
