@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
  */
 public class Start {
     public static void main (String[] args) throws FileNotFoundException {
-        CourseAdmin course = new CourseAdmin();
-        course.getCourse();
+        CourseAdmin courseAdmin = new CourseAdmin();
+        courseAdmin.getCourse();
     }
 }

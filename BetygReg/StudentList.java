@@ -1,20 +1,23 @@
 package BetygReg;
 
+import com.sun.xml.internal.bind.v2.TODO;
+
 import java.io.*;
 import java.util.*;
 
 public class StudentList {
 
 	private String findFile;
-	private ArrayList<String> list;
+	private ArrayList<String> studentList;
 	private ArrayList<String> list2 = new ArrayList<>();
+	private ArrayList<Student> studentList = new ArrayList<>();
 	private boolean loop;
 	private Student current;
 
 	public StudentList(){
 
 	}
-
+	//TODO hämta alla studentobjekt och spara i en array kallad studentlist
 	public void getRelevant(String cID) throws FileNotFoundException{
 		Scanner sc = new Scanner(System.in);
 		loop = true;
@@ -25,16 +28,18 @@ public class StudentList {
 		//Ta bort hakarna
 		content = content.substring(1);
 		content = content.substring(0, content.length()-1);
-		list = new ArrayList<>(Arrays.asList(content.split(", ")));
+		//studentList;
+		//studentList = new ArrayList<>(Arrays.asList(content.split(", "))); //behandlar en string just nu, ska vara array
 
 		//Hämta ut relevanta studenter som läser den valda kursen
-		for(int i = 0; i<list.size(); i++){
-			String a = ( list.get(i).substring(0, list.get(i).indexOf(" ")));
+		/*for(int i = 0; i<studentList.size(); i++){
+			String a = ( studentList.get(i).substring(0, studentList.get(i).indexOf(" ")));
 			if(a.equals(cID)){
-				String b = ( list.get(i).substring(list.get(i).indexOf(" ")+1));
+				String b = ( studentList.get(i).substring(studentList.get(i).indexOf(" ")+1));
 				list2.add(b);
 			}
 		}
+		*/
 		while(loop){
 			if(list2.isEmpty()){
 				System.out.println("There are no students in this course.");
@@ -54,9 +59,9 @@ public class StudentList {
 			//String relGrade2 = list2.get(0).subtring(11);
 			current = new Student(inputedStudent);
 			current.alterGrade();
-			for(int i = 0; i<list.size(); i++){
-				if(list.get(i).contains(cID+" "+inputedStudent)){
-					list.set(i, cID+" "+inputedStudent+" "+current.getGrade().getGrade());
+			for(int i = 0; i< studentList.size(); i++){
+				if(studentList.get(i).contains(cID+" "+inputedStudent)){
+					studentList.set(i, cID+" "+inputedStudent+" "+current.getGrade().getGrade());
 				}
 			}
 			for(int i = 0; i<list2.size(); i++){
@@ -72,12 +77,12 @@ public class StudentList {
 				list2.clear();
 			}
 			else if(findFile.toUpperCase().equals("END")){
-				current.getGrade().saveGrade(list);
+				current.getGrade().saveGrade(studentList);
 			}
 		}
 	}
 	public ArrayList<String> getList(){
-		return list;
+		return studentList;
 	}
 	public Student getStudent(){
 		return current;
